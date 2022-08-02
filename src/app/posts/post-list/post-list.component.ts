@@ -11,7 +11,7 @@ import * as sorter from 'sort-nested-json';
 })
 export class PostListComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
-  private postsSub: Subscription;
+  // private postsSub: Subscription;
   newList =[];
   lastlySortTenor = '';
   sortingFlag = 0;
@@ -258,7 +258,7 @@ export class PostListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.postsSub.unsubscribe();
+    // this.postsSub.unsubscribe();
   }
 
 }
