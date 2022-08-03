@@ -3,8 +3,18 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
+  {
+    path: "login",
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
   {
     path: "create-post",
     component: PostCreateComponent
@@ -12,6 +22,10 @@ const routes: Routes = [
   {
     path: "list-post",
     component: PostListComponent
+  },
+  {
+    path: "**",
+    component: PageNotFoundComponent
   }
 ];
 
