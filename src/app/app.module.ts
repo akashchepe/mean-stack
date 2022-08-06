@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
@@ -15,6 +16,7 @@ import { HeaderComponent } from './header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PostCreateComponent,
     HeaderComponent,
     PostListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +37,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatCardModule,
     MatToolbarModule,
     MatExpansionModule,
+    MatTabsModule,
     AppRoutingModule
   ],
   providers: [],

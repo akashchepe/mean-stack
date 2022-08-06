@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MyProfileComponent } from './my-profile/my-profile.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: "login",
     loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
+  {
+    path: "my-profile",
+    component: MyProfileComponent
   },
   {
     path: "create-post",
