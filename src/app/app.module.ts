@@ -17,6 +17,7 @@ import { PostListComponent } from './posts/post-list/post-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { ConfigService } from './config/config.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
     MatTabsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ConfigService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,10 +4,16 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
+
+app.use(function(req, res, next) {
+    req.header("Content-Type", "application/json");
+    res.header("Content-Type", "application/json");
+    next();
+});
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -46,12 +52,12 @@ function initial() {
     id: 1,
     name: "user"
   });
- 
+
   Role.create({
     id: 2,
     name: "moderator"
   });
- 
+
   Role.create({
     id: 3,
     name: "admin"

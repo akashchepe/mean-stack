@@ -1,14 +1,16 @@
-<div class="flex-align-center">
-    <mat-card>
-        <mat-card-title>Login</mat-card-title>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex. example@gmail.com">
-        </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>Password</mat-label>
-            <input type="password" matInput placeholder="Password">
-        </mat-form-field>
-        <button class="login-btn" mat-raised-button color="primary">Login</button>
-    </mat-card>
-</div>
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <div class="flex-align-center">
+        <mat-card>
+            <mat-card-title>Login</mat-card-title>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input formControlName="username" matInput placeholder="username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input formControlName="password" type="password" matInput placeholder="Password">
+            </mat-form-field>
+            <button class="login-btn" mat-raised-button color="primary">Login</button>
+        </mat-card>
+    </div>
+</form>
