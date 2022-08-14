@@ -5,6 +5,7 @@ import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
   },
   {
     path: "my-profile",
+    canActivate:[AuthGuard],
     component: MyProfileComponent
   },
   {

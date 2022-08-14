@@ -1,8 +1,12 @@
 <mat-toolbar color="primary">
-    <button mat-raised-button 
+    {{isLoggedIn}}
+    <button *ngIf="!isLoggedIn;else elseblock" mat-raised-button 
     color="accent" 
     routerLink="/login"
     routerLinkActive="router-link-active">Login</button> &nbsp;
+    <ng-template #elseblock>        
+        <button (click)="logout()" mat-raised-button color="accent">Logout</button> &nbsp;
+    </ng-template>
     <button mat-raised-button 
     color="accent" 
     routerLink="/my-profile"
