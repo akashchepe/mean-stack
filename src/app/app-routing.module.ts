@@ -24,10 +24,12 @@ const routes: Routes = [
   },
   {
     path: "create-post",
+    canActivate:[AuthGuard],
     component: PostCreateComponent
   },
   {
     path: "list-post",
+    canActivate:[AuthGuard],
     component: PostListComponent
   },
   {

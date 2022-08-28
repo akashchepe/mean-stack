@@ -3,11 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { LoginModel } from './models/login.model';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+
+  loginData: LoginModel;
 
   constructor(
     private http: HttpClient,
@@ -19,6 +23,7 @@ export class LoginService {
   onLogin(data){
     return this.http.post('http://localhost:8080/api/auth/signin', data)
     .subscribe(response => {
+      console.log(response);
       localStorage.setItem("id_token", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjYwNDE2NTcyLCJleHAiOjE2NjA1MDI5NzJ9.vXM7w1iKI1nvp_lRGizsgZc3EoQCbPbyNMiVuP8LPGQ")
       this.router.navigate(['my-profile']);
     });

@@ -8,13 +8,10 @@ import { LoginService } from '../login/login.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn;
   constructor(private router: Router,
-    private loginService: LoginService) { }
+    public loginService: LoginService) { }
 
-  ngOnInit(): void {
-    this.isLoggedIn = this.loginService.isLoggedIn();
-  }
+  ngOnInit(): void {  }
 
   logout() {
     localStorage.clear();

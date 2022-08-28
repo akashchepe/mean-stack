@@ -1,22 +1,6 @@
-<mat-toolbar color="primary">
-    {{isLoggedIn}}
-    <button *ngIf="!isLoggedIn;else elseblock" mat-raised-button 
-    color="accent" 
-    routerLink="/login"
-    routerLinkActive="router-link-active">Login</button> &nbsp;
-    <ng-template #elseblock>        
-        <button (click)="logout()" mat-raised-button color="accent">Logout</button> &nbsp;
-    </ng-template>
-    <button mat-raised-button 
-    color="accent" 
-    routerLink="/my-profile"
-    routerLinkActive="router-link-active">My Profile</button> &nbsp;
-    <button mat-raised-button 
-    color="accent" 
-    routerLink="/create-post"
-    routerLinkActive="router-link-active">Create post</button> &nbsp;
-    <button mat-raised-button 
-    color="accent" 
-    routerLink="/list-post"
-    routerLinkActive="router-link-active">List Posts</button>
+<mat-toolbar color="primary" *ngIf="loginService.isLoggedIn()">
+    <button mat-raised-button color="accent" routerLink="/my-profile" routerLinkActive="router-link-active">My Profile</button> &nbsp;
+    <button mat-raised-button color="accent" routerLink="/create-post" routerLinkActive="router-link-active">Create post</button> &nbsp;
+    <button mat-raised-button color="accent" routerLink="/list-post" routerLinkActive="router-link-active">List Posts</button> &nbsp;
+    <button (click)="logout()" mat-raised-button color="accent">Logout</button>
 </mat-toolbar>
